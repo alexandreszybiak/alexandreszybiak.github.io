@@ -1,60 +1,67 @@
 :root{
     font-family: 'Roboto Mono', monospace;
     --grid-unit: 58px;
+    --grid-unit-8: calc(8 * var(--grid-unit));
 }
 
 div.top{
     position: relative;
-    width: calc(var(--grid-unit) * 12);
+    width: calc(var(--grid-unit) * 20);
     height: calc(var(--grid-unit) * 4);
-    background-color: rgba(0,0,0,0.1);
+    /* background-color: rgba(0,0,0,0.1); */
 }
 
 body{
     background: url("../img/grid_pattern.jpg");
     margin-top: var(--grid-unit);
     margin-left: calc(3 * var(--grid-unit));
+    margin-right: 0px;
 }
 
 p{
     font-weight: 300;
     font-size: 24px;
     line-height: 58px;
-    background-color: rgba(255,0,0,0.1);
+    /* background-color: rgba(255,0,0,0.1); */
     margin: 0px;
     letter-spacing: 0.004em
 }
 
 p.about-me{
+    max-width: calc(20 * var(--grid-unit));
     margin-top: var(--grid-unit);
     position: relative;
-    top: 20px;
+    bottom: -20px;
 }
 
 h1{
+    width: calc(9 * var(--grid-unit));
     font-weight: 700;
-    font-size: 96px;
+    font-size: 112px;
     line-height: 116px;
-    letter-spacing: 0px;
-    background-color: rgba(0,255,0,0.1);
+    letter-spacing: -0.082em;
+    /* background-color: rgba(0,255,0,0.1); */
     margin: 0px;
     position: relative;
-    bottom: -20px;
-    left: calc(0px - var(--grid-unit));
+    left: calc(0px - 6px - var(--grid-unit));
+    bottom: -14px;
+}
 
+h1.surname{
+    width: var(--grid-unit-8);
 }
 
 h2{
     font-weight: 400;
     font-size: 48px;
     line-height: 58px;
-    background-color: rgba(0,0,255,0.1);
+    /* background-color: rgba(0,0,255,0.1); */
     margin: 0px;
 }
 
 h2.job-title{
     position: absolute;
     width: calc(4 * var(--grid-unit));
-    right: 0px;
+    left: calc(7 * var(--grid-unit));
     bottom: -10px;
 }
