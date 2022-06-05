@@ -2,6 +2,23 @@
     font-family: 'Roboto Mono', monospace;
     --grid-unit: 58px;
     --grid-unit-8: calc(8 * var(--grid-unit));
+    --grid-unit-section-height: calc(14 * var(--grid-unit));
+    --grid-unit-card-width: calc(9 * var(--grid-unit));
+    --grid-unit-card-height: calc(6 * var(--grid-unit));
+}
+
+div.section{
+    min-height: var(--grid-unit-section-height);
+}
+
+div.welcome-section{
+    background-color: rgba(255,0,0,0.1);
+}
+
+div.projects-section{
+    background-color: rgba(0,255,0,0.1);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 div.top{
@@ -37,9 +54,9 @@ p.about-me{
 h1{
     width: calc(9 * var(--grid-unit));
     font-weight: 700;
-    font-size: 112px;
+    font-size: 111.5px;
     line-height: 116px;
-    letter-spacing: -0.082em;
+    letter-spacing: -0.080em;
     /* background-color: rgba(0,255,0,0.1); */
     margin: 0px;
     position: relative;
@@ -64,4 +81,16 @@ h2.job-title{
     width: calc(4 * var(--grid-unit));
     left: calc(7 * var(--grid-unit));
     bottom: -10px;
+}
+
+img.project-card{
+    outline: auto;
+    outline-color: blue;
+    outline-width: 1px;
+    /* background-color: aqua; */
+    width: var(--grid-unit-card-width);
+    height: var(--grid-unit-card-height);
+    margin-right: var(--grid-unit);
+    margin-bottom: var(--grid-unit);
+    flex-shrink: 0;
 }
