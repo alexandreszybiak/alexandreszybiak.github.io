@@ -1,10 +1,32 @@
 :root{
     font-family: 'Roboto Mono', monospace;
+
+    /* grid system */
     --grid-unit: 58px;
+    --grid-unit-half: calc(var(--grid-unit) * 0.5);
     --grid-unit-8: calc(8 * var(--grid-unit));
     --grid-unit-section-height: calc(14 * var(--grid-unit));
-    --grid-unit-card-width: calc(9 * var(--grid-unit));
+    --grid-unit-card-width: calc(10 * var(--grid-unit));
     --grid-unit-card-height: calc(6 * var(--grid-unit));
+    --grid-unit-card-info-width: calc(8 * var(--grid-unit));
+
+    /* color system */
+    --main-color: black;
+    --background-color: white;
+}
+
+body{
+    background: url("../img/grid_pattern.jpg");
+    background-position: center 0;
+    margin: 0;
+}
+
+div.content{
+    inset: 0;
+    margin: auto;
+    width: calc(21 * var(--grid-unit));
+    padding-top: var(--grid-unit);
+    /* background-color: rgba(0,0,255,0.1); */
 }
 
 div.section{
@@ -12,13 +34,14 @@ div.section{
 }
 
 div.welcome-section{
-    background-color: rgba(255,0,0,0.1);
+    /* background-color: rgba(255,0,0,0.1); */
 }
 
 div.projects-section{
-    background-color: rgba(0,255,0,0.1);
+    /* background-color: rgba(0,255,0,0.1); */
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 div.top{
@@ -28,17 +51,10 @@ div.top{
     /* background-color: rgba(0,0,0,0.1); */
 }
 
-body{
-    background: url("../img/grid_pattern.jpg");
-    margin-top: var(--grid-unit);
-    margin-left: calc(3 * var(--grid-unit));
-    margin-right: 0px;
-}
-
 p{
     font-weight: 300;
     font-size: 24px;
-    line-height: 58px;
+    line-height: var(--grid-unit);
     /* background-color: rgba(255,0,0,0.1); */
     margin: 0px;
     letter-spacing: 0.004em
@@ -83,14 +99,47 @@ h2.job-title{
     bottom: -10px;
 }
 
-img.project-card{
-    outline: auto;
-    outline-color: blue;
-    outline-width: 1px;
+div.project-card{
+    /* outline: auto; */
+    /* outline-color: blue; */
+    /* outline-width: 1px; */
     /* background-color: aqua; */
+    position: relative;
     width: var(--grid-unit-card-width);
     height: var(--grid-unit-card-height);
-    margin-right: var(--grid-unit);
     margin-bottom: var(--grid-unit);
     flex-shrink: 0;
+    background-color: var(--main-color);
+    
+}
+img.project-card-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-duration: 100ms;
+}
+
+div.project-card-text-container{
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    width: var(--grid-unit-8);
+    height: 100%;
+    background-color: black;
+    transition-duration: 100ms;
+}
+
+div.project-card:hover > div.project-card-text-container{
+    opacity: 0.9;
+}
+
+div.project-card:hover > img.project-card-image{
+    opacity: 0.8;
+}
+
+p.project-card-text{
+    color: #fff;
+    line-height: var(--grid-unit-half);
+    padding: var(--grid-unit-half);
 }
