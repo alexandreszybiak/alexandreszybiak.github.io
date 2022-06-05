@@ -1,11 +1,14 @@
 :root{
-    font-family: 'Roboto Mono', monospace;
-
     /* grid system */
     --grid-unit: 58px;
     --grid-unit-half: calc(var(--grid-unit) * 0.5);
+    --grid-unit-2: calc(2 * var(--grid-unit));
+    --grid-unit-3: calc(3 * var(--grid-unit));
     --grid-unit-8: calc(8 * var(--grid-unit));
-    --grid-unit-section-height: calc(14 * var(--grid-unit));
+    --grid-unit-9: calc(9 * var(--grid-unit));
+    --grid-unit-11: calc(11 * var(--grid-unit));
+    --grid-unit-21: calc(21 * var(--grid-unit));
+    --grid-unit-section-height: calc(16 * var(--grid-unit));
     --grid-unit-card-width: calc(10 * var(--grid-unit));
     --grid-unit-card-height: calc(6 * var(--grid-unit));
     --grid-unit-card-info-width: calc(8 * var(--grid-unit));
@@ -14,8 +17,12 @@
     --main-color: black;
     --background-color: white;
 
-    /* misc values */
+    /* misc variables */
     --border-radius: 5px;
+
+    /* default values */
+    font-family: 'Roboto Mono', monospace;
+    color: var(--main-color);
 }
 
 a{
@@ -39,8 +46,8 @@ body{
 div.content{
     inset: 0;
     margin: auto;
-    width: calc(21 * var(--grid-unit));
-    padding-top: var(--grid-unit);
+    width: var(--grid-unit-21);
+    padding-top: var(--grid-unit-2);
     /* background-color: rgba(0,0,255,0.1); */
 }
 
@@ -57,6 +64,8 @@ div.projects-section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-content: flex-start;
+    min-height: auto;
 }
 
 div.top{
@@ -69,17 +78,6 @@ div.top-buttons{
     position: absolute;
     right: 0px;
     top: var(--grid-unit)
-}
-
-div.button{
-    width: var(--grid-unit);
-    height: var(--grid-unit);
-    background-color: var(--main-color);
-}
-
-div.mail-button{
-    background-position: center center;
-    background-image: url(../img/mail_icon.png);
 }
 
 p{
@@ -142,8 +140,8 @@ div.project-card{
     flex-shrink: 0;
     background-color: var(--main-color);
     border-radius: var(--border-radius);
-    
 }
+
 img.project-card-image{
     position: absolute;
     width: 100%;
@@ -160,7 +158,7 @@ div.project-card-text-container{
     right: 0;
     width: var(--grid-unit-8);
     height: 100%;
-    background-color: black;
+    background-color: var(--main-color);
     transition-duration: 100ms;
     transition-property: initial;
     border-radius: 0px var(--border-radius) var(--border-radius) 0px;
@@ -178,4 +176,77 @@ p.project-card-text{
     color: #fff;
     line-height: var(--grid-unit-half);
     padding: var(--grid-unit-half);
+}
+
+div.button{
+    width: var(--grid-unit);
+    height: var(--grid-unit);
+    background-color: var(--main-color);
+}
+
+div.mail-button{
+    background-position: center center;
+    background-image: url(../img/mail_icon.png);
+}
+
+/* media queries */
+@media (max-width: 1334px){
+    div.content{
+        width: calc(15 * var(--grid-unit));
+        /* background-color: rgba(0,0,255,0.1); */
+    }
+}
+
+@media (max-width: 986px){
+    div.content{
+        width: calc(11 * var(--grid-unit));
+        /* background-color: rgba(0,0,255,0.1); */
+    }
+
+    div.project-card{
+        position: relative;
+        width: var(--grid-unit-11);
+        height: var(--grid-unit-card-height);
+        margin-bottom: var(--grid-unit);
+        flex-shrink: 0;
+        background-color: var(--main-color);
+        border-radius: var(--border-radius);
+    }
+}
+
+@media (max-width: 754px){
+    div.content{
+        width: var(--grid-unit-9);
+        /* background-color: rgba(0,0,255,0.1); */
+    }
+
+    h1{
+        width: calc(9 * var(--grid-unit));
+        font-weight: 700;
+        font-size: 111.5px;
+        line-height: 116px;
+        letter-spacing: -0.080em;
+        /* background-color: rgba(0,255,0,0.1); */
+        margin: 0px;
+        position: relative;
+        left: -6px;
+        bottom: -14px;
+    }
+    
+    h2.job-title{
+        position: relative;
+        width: auto;
+        left: var(--grid-unit);
+        /* background-color: blue; */
+    }
+
+    div.project-card{
+        position: relative;
+        width: var(--grid-unit-9);
+        height: var(--grid-unit-card-height);
+        margin-bottom: var(--grid-unit);
+        flex-shrink: 0;
+        background-color: var(--main-color);
+        border-radius: var(--border-radius);
+    }
 }
