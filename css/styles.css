@@ -13,6 +13,9 @@
     /* color system */
     --main-color: black;
     --background-color: white;
+
+    /* misc values */
+    --border-radius: 5px;
 }
 
 body{
@@ -46,9 +49,25 @@ div.projects-section{
 
 div.top{
     position: relative;
-    width: calc(var(--grid-unit) * 20);
     height: calc(var(--grid-unit) * 4);
     /* background-color: rgba(0,0,0,0.1); */
+}
+
+div.top-buttons{
+    position: absolute;
+    right: 0px;
+    top: var(--grid-unit)
+}
+
+div.button{
+    width: var(--grid-unit);
+    height: var(--grid-unit);
+    background-color: var(--main-color);
+}
+
+div.mail-button{
+    background-position: center center;
+    background-image: url(../img/mail_icon.png);
 }
 
 p{
@@ -110,6 +129,7 @@ div.project-card{
     margin-bottom: var(--grid-unit);
     flex-shrink: 0;
     background-color: var(--main-color);
+    border-radius: var(--border-radius);
     
 }
 img.project-card-image{
@@ -118,16 +138,20 @@ img.project-card-image{
     height: 100%;
     object-fit: cover;
     transition-duration: 100ms;
+    border-radius: var(--border-radius);
 }
 
 div.project-card-text-container{
     opacity: 0;
+    overflow: hidden;
     position: absolute;
     right: 0;
     width: var(--grid-unit-8);
     height: 100%;
     background-color: black;
     transition-duration: 100ms;
+    transition-property: initial;
+    border-radius: 0px var(--border-radius) var(--border-radius) 0px;
 }
 
 div.project-card:hover > div.project-card-text-container{
